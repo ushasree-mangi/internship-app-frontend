@@ -48,7 +48,7 @@ const PropertyCard=(props)=>{
                         <div className='connect-with-us-container'>
                             <p>connect with us :</p>
                             <button type='button' onClick={onClickChat}>Chat Request</button>
-                            {isShowChatRequestStatus&&<p>Chat Request : </p>}
+                            {isShowChatRequestStatus&&<p>Chat Request :{status} </p>}
                         </div>
                     </div>
         </li>
