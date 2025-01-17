@@ -1,26 +1,42 @@
 import {BrowserRouter,Route, Switch} from 'react-router-dom'
 
 import ProtectedRoute  from './components/ProtectedRoute'
+
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm'
 import Home from './components/Home'
 import ChatRequests from './components/ChatRequests';
+
+import MyProfile from './components/MyProfile/MyProfile.js';
+import MyContacts from './components/MyContacts/MyContacts.js';
+import MyShortlists from './components/MyShortlists/MyShortlists.js';
+import Enquiries from './components/Enquiries/Enquiries.js'
+import MyProperties from './components/MyProperties/MyProperties.js'
+import MyPayments from './components/MyPayments/MyPayments.js'
 
 
 
 import './App.css';
 
 
+
 const App = () => (
   <>
   
   <BrowserRouter>
-  
+ 
   <Switch>
     <Route exact path="/login" component={LoginForm} />
     <Route exact path="/register" component={RegisterForm} />
-    <ProtectedRoute exact path="/" component={Home} />
+    <Route exact path="/" component={Home} />
     <ProtectedRoute exact path='/chat-requests' component={ChatRequests}/>
+
+    <ProtectedRoute exact path='/profile/myProfile' component={MyProfile}/>
+    <ProtectedRoute exact path='/profile/myShortlists' component={MyShortlists}/>
+    <ProtectedRoute exact path='/profile/myContacts' component={MyContacts}/>
+    <ProtectedRoute exact path='/profile/myPayments' component={MyPayments}/>
+    <ProtectedRoute exact path='/profile/myProperties' component={MyProperties}/>
+    <ProtectedRoute exact path='/profile/enquiries' component={Enquiries}/>
      
   </Switch>
   </BrowserRouter>
@@ -28,3 +44,14 @@ const App = () => (
 )
 
 export default App;
+
+
+/*const Profile=()=>{
+
+    return(
+        
+    )
+
+}
+
+export default Profile*/

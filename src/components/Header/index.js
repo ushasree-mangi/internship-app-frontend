@@ -67,7 +67,11 @@ class Header extends Component {
             </li>
 
             <li className="nav-menu-item">{username}</li>
-
+            <li className="nav-menu-item">
+              <Link to="/profile/myProfile" className="nav-link">
+                profile
+              </Link>
+            </li>
             
             <li className="nav-menu-item">
               <Link to="/chat-requests" className="nav-link">

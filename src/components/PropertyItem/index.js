@@ -9,10 +9,12 @@ const PropertyCard=(props)=>{
     
     const [isShowChatRequestStatus , setIsShowChatRequestStatus]=useState(false)
 
-    const {propertyId,propertyTitle,price, description,status }=propertyDetails
+    const {propertyId,propertyTitle,price, description}=propertyDetails
+    var status="pending"
+    var {status}=propertyDetails
     const [propertyStatus,setPropertyStatus]=useState(status)
     
-
+  const jwtToken=Cookies.get("jwt_token")
     const sendChatRequest=async()=>{
         const token = Cookies.get('jwt_token')
         const url="http://localhost:4000/chat-request"
@@ -45,11 +47,11 @@ const PropertyCard=(props)=>{
                         <h3><strong>Title : </strong>{propertyTitle}</h3>
                         <p><strong>Price:</strong> {price}</p>
                         <p><strong>Description:</strong> {description}</p>
-                        <div className='connect-with-us-container'>
+                       {(jwtToken!==undefined) && <div className='connect-with-us-container'>
                             <p>connect with us :</p>
                             <button type='button' onClick={onClickChat}>Chat Request</button>
-                            {isShowChatRequestStatus&&<p>Chat Request :{status} </p>}
-                        </div>
+                           
+                        </div>}
                     </div>
         </li>
 
