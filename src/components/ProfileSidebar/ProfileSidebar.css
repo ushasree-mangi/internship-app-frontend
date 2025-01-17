@@ -1,0 +1,16 @@
+.sidebar-container{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+.sidebar-buttons-container{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-button{
+   margin-left:12px;
+   padding: 15px;
+   width: 130px;
+}

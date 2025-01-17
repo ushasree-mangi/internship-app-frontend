@@ -1,0 +1,7 @@
+.my-properties-page-container{
+    display: flex;
+flex-direction: row;
+}
+.my-properties-page-content-container{
+    padding: 25px;
+}

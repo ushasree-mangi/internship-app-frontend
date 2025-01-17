@@ -1,0 +1,4 @@
+.my-shortlists-page-container{
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,7 @@
+.my-contacts-page-container{
+    display: flex;
+    flex-direction: row;
+}
+.my-contacts-page-content-container{
+    padding:25px 20px 35px 20px;
+}

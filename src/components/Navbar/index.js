@@ -32,6 +32,11 @@ const Navbar = props => {
               Login
             </Link>
           </li>
+          <li className="nav-menu-item">
+            <Link to="/" className="nav-link">
+             Home
+            </Link>
+          </li>
         </ul>
         
       </div>
