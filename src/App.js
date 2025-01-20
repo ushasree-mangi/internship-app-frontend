@@ -13,6 +13,7 @@ import MyShortlists from './components/MyShortlists/MyShortlists.js';
 import Enquiries from './components/Enquiries/Enquiries.js'
 import MyProperties from './components/MyProperties/MyProperties.js'
 import MyPayments from './components/MyPayments/MyPayments.js'
+import PropertiesPage from './components/PropertiesPage'
 
 
 
@@ -37,6 +38,7 @@ const App = () => (
     <ProtectedRoute exact path='/profile/myPayments' component={MyPayments}/>
     <ProtectedRoute exact path='/profile/myProperties' component={MyProperties}/>
     <ProtectedRoute exact path='/profile/enquiries' component={Enquiries}/>
+    <ProtectedRoute exact path='/properties' component={PropertiesPage}/>
      
   </Switch>
   </BrowserRouter>
