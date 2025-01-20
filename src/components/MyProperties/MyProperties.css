@@ -5,3 +5,6 @@ flex-direction: row;
 .my-properties-page-content-container{
     padding: 25px;
 }
+.properties-page{
+    margin: 70px 0px 0px 300px;
+}
