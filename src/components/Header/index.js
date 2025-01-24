@@ -3,6 +3,7 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 
 import './index.css'
+import { CgProfile } from 'react-icons/cg'
 
 class Header extends Component {
 
@@ -66,10 +67,10 @@ class Header extends Component {
               </Link>
             </li>
 
-            <li className="nav-menu-item">{username}</li>
+            <li className="nav-menu-item-username">{username}</li>
             <li className="nav-menu-item">
               <Link to="/profile/myProfile" className="nav-link">
-                profile
+              <CgProfile className='header-user-icon' />
               </Link>
             </li>
             
