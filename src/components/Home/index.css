@@ -379,3 +379,168 @@ color: var(--gold-dark);
   color: var(--gold-dark);
   border-top: 2px solid var(--gold);
 }
+
+
+
+/* For devices with a maximum width of 768px (tablets and smaller) */
+@media screen and (max-width: 768px) {
+  .title-container {
+    padding-top: 30px;
+    height: auto; /* Adjust height */
+  }
+
+  .title-container img {
+    width: 80%; /* Make the image responsive */
+    margin: 0 auto;
+  }
+
+  .first-title {
+    font-size: 24px; /* Smaller font for mobile */
+  }
+
+  .tagline {
+    font-size: 1rem; /* Adjust tagline size */
+  }
+
+  .search-container {
+    width: 90%; /* Take up most of the screen */
+    padding: 10px;
+  }
+
+  .row-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    padding: 0;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%; /* Full width buttons */
+  }
+
+  .row-search {
+    flex-direction: column; /* Stack search bar and button */
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .property-grid {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+
+  .property-card {
+    margin: 0 auto; /* Center the cards */
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .feature {
+    width: 100%;
+  }
+
+  .cta {
+    padding: 30px 10px;
+  }
+
+  .testimonials, .newsletter, .footer {
+    padding: 20px 10px;
+  }
+
+  .testimonial-cards {
+    grid-template-columns: 1fr; /* Single column for testimonials */
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+  .property-grid {
+    display: flex; /* Change grid to flexbox */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 1px; /* Add spacing between cards */
+    padding: 1px; /* Add padding for scrolling area */
+    scroll-snap-type: x mandatory; /* Snap scrolling for better UX */
+  }
+
+  .property-card {
+    flex: 0 0 80%; /* Each card takes 80% of the container width */
+    scroll-snap-align: center; /* Snap to center of the viewport */
+    margin-right: 10px; /* Add spacing between cards */
+  }
+
+  .property-card img {
+    height: auto; /* Maintain aspect ratio for images */
+    max-height: 150px; /* Limit image height */
+  }
+
+  .view-btn {
+    font-size: 0.9rem; /* Adjust button size for smaller screens */
+  }
+}
+
+/* For devices with a maximum width of 480px (phones) */
+@media screen and (max-width: 480px) {
+  .title-container {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .first-title {
+    font-size: 20px;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .btn-find {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .property-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .property-info p {
+    font-size: 1rem;
+  }
+
+  .newsletter h2 {
+    font-size: 1.5rem;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+  }
+}
