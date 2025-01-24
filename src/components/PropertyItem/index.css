@@ -4,7 +4,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
-  
+  text-align: start;
   transition: transform 0.2s ease-in-out;
   overflow: hidden;
 }
@@ -19,6 +19,7 @@
   
   .property-details p {
     margin: 5px 0;
+    font-size: 16px;
   }
 
   .connect-with-us-container{
@@ -32,7 +33,7 @@
    margin-top: 0px;
   }
   .connect-with-us-container button{
-    background-color: #24A0ED;
+    background-color: #B8860B;
     width: 120px;
     height: 38px;
     border: none;
