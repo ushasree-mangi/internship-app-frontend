@@ -1,4 +1,4 @@
-import {Component} from 'react'
+/*import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect,Link} from 'react-router-dom' 
 import Navbar from '../Navbar'
@@ -152,7 +152,8 @@ class RegisterForm extends Component {
         <form className="form-container" onSubmit={this.submitForm}>
           <h1>SignUp</h1>
           <div className="input-container">{this.renderUsernameField()}</div>
-          {/*<div className="input-container">{this.renderEmailField()}</div>*/}
+          
+         <div className="input-container">{this.renderEmailField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
          
           
@@ -168,7 +169,7 @@ class RegisterForm extends Component {
 }
 
 export default RegisterForm 
-/*
+*/
 
 
 import React, { useState } from "react";
@@ -356,5 +357,5 @@ const RegisterForm = () => {
     );
 };
 
-export default RegisterForm; */
+export default RegisterForm; 
 

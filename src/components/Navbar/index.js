@@ -13,8 +13,8 @@ const Navbar = props => {
      
 
       <div className="nav-bar-large-container">
-        <Link to="/">
-        <span className="shopper-logo-name">Sample App</span>
+        <Link to="/" className="shopper-logo-name">
+        <span >Sample App</span>
         </Link>
       
         <ul className="nav-menu">
