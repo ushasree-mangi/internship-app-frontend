@@ -49,7 +49,7 @@ const MyContacts = () => {
                     </div>
                     <br></br>
                     <div className='my-contacts-title'>
-                        <h5>Contacted Properties</h5>
+                        <h3>Contacted Properties</h3>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked />
                             <label class="form-check-label" for="flexSwitchCheckDefault">Currently Available</label>

@@ -12,7 +12,7 @@ const ProfileSidebar = () => {
     return (
         <div className="sidebar-container">
             <div>
-                <p>Manage your account</p>
+                <p className='manage-acccount-paragraph'>Manage your account</p>
                 <hr />
             </div>
             <div className="sidebar-buttons-container">

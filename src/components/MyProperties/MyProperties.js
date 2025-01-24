@@ -49,14 +49,13 @@ const MyProperties = () => {
                         <button>Flatemates</button>
                         <button>Land/Plot</button>
                     </div>
-                    <h1>MY Properties page</h1>
             <div className="property-list">
                     <h2 className="properties-heading">Properties</h2>
                     <ul className="property-card-list">
                         {propertiesArray.length===0? <div className='properties-page'>
                         <center>
                             <img src={image}></img>
-                            <h6>No Properties Posted</h6>
+                            <h4>No Properties Posted</h4>
                             <p>Want to Post A Property Now?</p>
                             <button className='send-message-btn'> &nbsp;Post Now</button>
                         </center>

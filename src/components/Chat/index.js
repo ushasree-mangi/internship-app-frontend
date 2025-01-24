@@ -22,7 +22,7 @@ const Chat = (props) => {
       const url = `http://localhost:4000/get-chat-messages?chatId=${chatId}`;
       const headers = {
         'Content-Type': 'application/json',
-        'Authorization':`Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       };
 
       const response = await axios.get(url, { headers });
@@ -79,16 +79,16 @@ const Chat = (props) => {
         <div className="chat-user-icon">{username.split(' ').map((name) => name[0]).join('')}</div>
         <p className='chat-user-name'>{username}</p>
         <button className='chat-seller-button'>Seller</button>
-        <MdCall className='chat-call-icon'/>
+        <MdCall className='chat-call-icon' />
         <RxCross2 className='chat-close-icon' />
       </div>
-     <div className='chat-sub-header'>
-     <BiBuildings className='chat-building-icon'/>
-     <p className='chat-propertytitle'>{propertyTitle}</p>
-     <BiSolidBank className='chat-bank-icon'/>
-     <p>{price}</p>
-     <TiEyeOutline className='chat-eye-icon'/><p className='chat-view-text'>View</p>
-     </div>
+      <div className='chat-sub-header'>
+        <BiBuildings className='chat-building-icon' />
+        <p className='chat-propertytitle'>{propertyTitle}</p>
+        <BiSolidBank className='chat-bank-icon' />
+        <p>{price}</p>
+        <TiEyeOutline className='chat-eye-icon' /><p className='chat-view-text'>View</p>
+      </div>
       <div className="chat-body">
         {messages.map((message) => {
           const userId = localStorage.getItem('userId');
