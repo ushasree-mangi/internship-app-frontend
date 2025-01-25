@@ -1,13 +1,12 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
-import Header  from '../Header';
 import axios from 'axios'
 import { io } from 'socket.io-client';
 import Cookies from 'js-cookie'
-import ChatRequestItem from '../ChatRequestItem';
-import SentChatRequestItem from '../SentChatRequestItem';
-import Chat from '../Chat'
-import './index.css';
+import ChatRequestItem from '../ChatRequestItem/ChatRequestItem';
+import SentChatRequestItem from '../SentChatRequestItem/SentChatRequestItem.js';
+import Chat from '../Chat/Chat.js'
+import './ChatRequests.css';
 
 const ChatRequests = () => {
 
@@ -102,9 +101,7 @@ const ChatRequests = () => {
 
     },[])
 
-    return (
-        <>
-        <Header/>
+    return (    
         
         <div className="chat-page-container" >
             <div className="requests-section" style={{ width:{widthOfChatRequestsView} }}>
@@ -127,7 +124,6 @@ const ChatRequests = () => {
            
         </div>
        
-        </>
     );
 };
 

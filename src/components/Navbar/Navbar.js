@@ -1,8 +1,8 @@
-import {Link, withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 
-import './index.css'
+import './Navbar.css'
 
 const Navbar = props => {
  
@@ -47,4 +47,4 @@ const Navbar = props => {
   )
 }
 
-export default withRouter(Navbar)
+export default Navbar;

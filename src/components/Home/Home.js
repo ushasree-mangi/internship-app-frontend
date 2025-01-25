@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom'
-import Header from '../Header';
+import Header from '../Header/Header';
 import Cookies from 'js-cookie';
-import PropertyCard from '../PropertyItem';
+import PropertyCard from '../PropertyItem/PropertyItem.js';
 import axios from 'axios';
 import { io } from 'socket.io-client';
-import './index.css';
+import './Home.css';
+import Navbar from '../Navbar/Navbar.js';
 
 const Home = () => {
   const [propertiesArray, setPropertiesArray] = useState([]);
@@ -13,6 +14,7 @@ const Home = () => {
   const [searchType, setSearchType] = useState('rent');
   const [searchQuery, setSearchQuery] = useState('');
   
+  const token=Cookies.get("jwt_token")
 
 
   useEffect(() => {
@@ -88,7 +90,7 @@ const Home = () => {
 
   return (
     <>
-      <Header />
+       {token===undefined?<Navbar/>:<Header/>}
       <div
         className="title-container"
         style={{

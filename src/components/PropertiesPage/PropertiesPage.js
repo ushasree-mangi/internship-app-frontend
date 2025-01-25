@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../Header';
+
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useLocation } from 'react-router-dom';
-import './index.css';
+import './PropertiesPage.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const PropertiesPage = () => {
@@ -74,9 +74,8 @@ const PropertiesPage = () => {
   };
 
   return (
-    <>
-      <Header />
-
+   
+    
     <div className="propertiespage-container">
       {/* Filter Sidebar */}
       <div className="propertiespage-filter-sidebar">
@@ -174,7 +173,7 @@ const PropertiesPage = () => {
         </div>
       </div>
     </div>
-    </>
+  
   );
 };
 

@@ -173,8 +173,8 @@ export default RegisterForm
 
 
 import React, { useState } from "react";
-import Navbar from '../Navbar'
-import "./index.css";
+import Navbar from '../Navbar/Navbar'
+import "./Register.css";
 
 const RegisterForm = () => {
     const [formData, setFormData] = useState({
@@ -255,7 +255,8 @@ const RegisterForm = () => {
     };
 
     return (
-      <>  <Navbar/>
+      <>  
+      <Navbar/>
         <div className="login-form-container">
            
             <form onSubmit={handleSubmit} className="form-container">

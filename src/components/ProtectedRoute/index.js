@@ -1,4 +1,5 @@
 import {Redirect, Route} from 'react-router-dom'
+import Header from '../Header/Header.js'
 import Cookie from 'js-cookie'
 
 const ProtectedRoute = props => {
@@ -6,7 +7,12 @@ const ProtectedRoute = props => {
   if (token === undefined) {
     return <Redirect to="/login" />
   }
-  return <Route {...props} />
+  return ( 
+  <>
+    <Header/>
+    <Route {...props} />
+  </>)
+ 
 }
 
 export default ProtectedRoute

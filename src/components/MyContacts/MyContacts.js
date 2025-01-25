@@ -1,6 +1,5 @@
 import ProfileSidebar from '../ProfileSidebar/ProfileSidebar'
-import SentChatRequestItem from '../SentChatRequestItem'
-import Header from '../Header'
+import SentChatRequestItem from '../SentChatRequestItem/SentChatRequestItem'
 import Cookies from 'js-cookie'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -33,7 +32,7 @@ const MyContacts = () => {
     }, [])
 
     return (
-        <> <Header />
+       
             <div className='my-contacts-page-container'>
                 <ProfileSidebar />
                 <div className='my-contacts-page-content-container'>
@@ -64,8 +63,7 @@ const MyContacts = () => {
                     </div>
                 </div>
             </div>
-        </>
-
+     
     )
 
 }

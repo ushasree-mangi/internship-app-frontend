@@ -1,7 +1,7 @@
 import axios  from 'axios'
 import Cookies from 'js-cookie'
 import { useState } from 'react'
-import './index.css'
+import './PropertyItem.css'
 
 const PropertyCard=(props)=>{
 

@@ -1,5 +1,5 @@
 import { LiaBathSolid, LiaRupeeSignSolid } from 'react-icons/lia';
-import './index.css'
+import './SentChatRequestItem.css'
 import img from '../../assets/images/image.jpg'
 import { RiCompass3Line } from 'react-icons/ri';
 import { PiBuildingDuotone, PiChatDotsLight } from 'react-icons/pi';

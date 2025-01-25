@@ -1,7 +1,6 @@
 import './MyProperties.css'
 import ProfileSidebar from '../ProfileSidebar/ProfileSidebar'
-import Header from '../Header'
-import PropertyCard from '../PropertyItem'
+import PropertyCard from '../PropertyItem/PropertyItem'
 import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import axios from 'axios'
@@ -35,7 +34,7 @@ const MyProperties = () => {
 
 
     return (
-        <> <Header />
+       
             <div className='my-properties-page-container'>
                 <ProfileSidebar />
                 <div className='my-properties-page-content-container'>
@@ -79,7 +78,7 @@ const MyProperties = () => {
 
             </div>
 
-        </>
+       
 
     )
 

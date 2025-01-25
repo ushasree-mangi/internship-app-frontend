@@ -2,7 +2,7 @@ import {Link, withRouter} from 'react-router-dom'
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 
-import './index.css'
+import './Header.css'
 import { CgProfile } from 'react-icons/cg'
 
 class Header extends Component {
@@ -79,6 +79,12 @@ class Header extends Component {
                 Chat Requests
               </Link>
             </li>
+            <li className="nav-menu-item">
+              <Link to="/add-property" className="nav-link">
+                Add Properties
+              </Link>
+            </li>
+
           </ul>
           <button
             type="button"

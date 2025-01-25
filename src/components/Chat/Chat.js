@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
-import './index.css';
+import './Chat.css';
 import { io } from 'socket.io-client';
 import { MdCall } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';

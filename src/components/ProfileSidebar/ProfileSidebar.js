@@ -37,7 +37,7 @@ const ProfileSidebar = () => {
                     onClick={onClickSidebarButton}
                     className={`sidebar-button ${location.pathname.includes('/profile/myProperties') ? 'active' : ''}`}>Your Properties</button>
                 <button
-                    name="interestedProperties"
+                    name="enquiries"
                     onClick={onClickSidebarButton}
                     className={`sidebar-button ${location.pathname.includes('/profile/interestedProperties') ? 'active' : ''}`}>Interested in your Properties</button>
             </div>
