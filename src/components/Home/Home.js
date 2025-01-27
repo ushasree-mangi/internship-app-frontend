@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     const getProperties = async () => {
       const token = Cookies.get('jwt_token');
-      console.log(`inside the home ${token}`);
+      
       const url = "http://localhost:4000/properties";
 
       const headers = {

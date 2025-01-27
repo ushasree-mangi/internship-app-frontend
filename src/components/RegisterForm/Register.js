@@ -175,8 +175,9 @@ export default RegisterForm
 import React, { useState } from "react";
 import Navbar from '../Navbar/Navbar'
 import "./Register.css";
+import axios from "axios";
 
-const RegisterForm = () => {
+const RegisterForm = (props) => {
     const [formData, setFormData] = useState({
         username: "",
         email: "",
@@ -245,12 +246,28 @@ const RegisterForm = () => {
     };
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
+        
         if (validateForm()) {
             console.log("Form Data:", formData);
             // Add logic to send data to backend using Node.js and SQLite
-            alert("Registration successful!");
+            const apiUrl="http://localhost:4000/register"
+            const body=formData
+
+            const response =await axios.post(apiUrl,body)
+            console.log(response)
+            console.log(response.status)
+            
+            
+            if(response.status===201){ 
+               alert("Registration successful!");
+               const {history} = props
+   
+                history.replace('/login')
+            }else{
+              alert("Registration Failed!");
+            }
         }
     };
 

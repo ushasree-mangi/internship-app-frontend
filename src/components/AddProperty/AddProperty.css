@@ -5,12 +5,26 @@
     --cream: #fdf5e6;
     --gray-dark: #d4c7aa;
 }
+label{
+    font-size: 18px;
+    margin-bottom: 8px;
+    
+}
+.add-property-page-bg-container{
+   
+    margin: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
+}
 .add-property-container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: var(--gray-dark);
-    color: var(--cream);
+    width: 70%;
+    
+   background-color: #fff;
+   color: #D4AF37;
     padding: 15px;  /* Reduced padding */
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -20,10 +34,12 @@
 .add-property-container form {
     display: flex;
     flex-direction: column;
+    
 }
 
 .add-property-container input,
 .add-property-container textarea,
+.add-property-container select
 .add-property-container button {
     margin-bottom: 10px;  /* Reduced margins */
     padding: 10px;
@@ -45,8 +61,23 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    height: 35px;
+    align-self: center;
+    margin-top: 25px;
+    border-radius: 6px;
+    width: 120px;
+    color: #fff;
+    font-size:16px;
 }
 
 .add-property-container button:hover {
     background-color: var(--gold-dark);
+}
+.check-box-styling{
+    height: 38px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid var(--gold-dark);
+    border-radius: 5px;
+    background-color: var(--cream);
 }
