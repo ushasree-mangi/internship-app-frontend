@@ -2,6 +2,7 @@ import axios  from 'axios'
 import Cookies from 'js-cookie'
 import { useState } from 'react'
 import './PropertyItem.css'
+import image from '../../assets/images/no-properties.svg'
 
 const PropertyCard=(props)=>{
 
@@ -9,7 +10,7 @@ const PropertyCard=(props)=>{
     
     const [isShowChatRequestStatus , setIsShowChatRequestStatus]=useState(false)
 
-    const {propertyId,propertyTitle,price, description}=propertyDetails
+    const {propertyId,propertyTitle,price, description,city,state,imgUrl}=propertyDetails
     var status="pending"
     var {status}=propertyDetails
     const [propertyStatus,setPropertyStatus]=useState(status)
@@ -41,18 +42,34 @@ const PropertyCard=(props)=>{
     return (
         
 
-        <li className="property-card">
-                    
-                    <div className="property-details">
-                        <h3><strong>Title : </strong>{propertyTitle}</h3>
-                        <p><strong>Price:</strong> {price}</p>
-                        <p><strong>Description:</strong> {description}</p>
-                       {(jwtToken!==undefined) && <div className='connect-with-us-container'>
-                            <p>connect with us :</p>
-                            <button type='button' onClick={onClickChat}>Chat Request</button>
-                           
-                        </div>}
+        <li className="PropertyItem-property-card">
+<section className="PropertyItem-featured">
+          
+         
+                <div className="PropertyItem-property-item">
+                    <div className="PropertyItem-property-card">
+                        <div className="PropertyItem-property-image-placeholder">
+                            <img src={imgUrl} alt="Property Image" />
+                        </div>
+                        <div className="PropertyItem-property-info">
+                            <h3>{propertyTitle}</h3>
+                            <p>{city}, {state}</p>
+                            <p><strong>Price:</strong> {price}</p>
+                            <p><strong>Description:</strong> {description}</p>
+                        </div>
+                        {jwtToken && (
+                            <div className="PropertyItem-view-btn">
+                                
+                                <button type="button" onClick={onClickChat}>Chat Request</button>
+                          
+                                <button type='button'>View Details</button>
+                            </div>
+                        )}
+                        
                     </div>
+                </div>
+     
+        </section>
         </li>
 
       
