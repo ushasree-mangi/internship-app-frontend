@@ -130,9 +130,10 @@
 .nav-menu-item-username {
   font-family: 'Roboto';
   text-decoration: none;
-  margin: 15px 0px;
-  font-weight: 500;
+  margin: 10px 0px;
+  font-weight: 600;
   font-size: 18px;
+  color: #d0b200;
 }
 /* .nav-link {
   text-decoration: none;
