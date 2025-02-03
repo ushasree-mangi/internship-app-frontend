@@ -59,8 +59,8 @@
   align-items: center;
   justify-content: center;
   /* Increased padding for more space inside */
- 
-  margin: 0 auto; /* Center the container */
+ padding: 20px;
+  margin: 10px auto; /* Center the container */
   width: fit-content; /* Container wraps tightly around content */
   border: 2px solid var(--light-gray); /* Border */
   border-bottom-left-radius:10px ; /* Rounded corners */
@@ -73,7 +73,7 @@
 .row-buttons {
   
   display: flex;
-  padding: 0 150px;
+  padding: 0 px;
   justify-content: space-between;
   width: 100%; /* Full width */
   margin-bottom: 0px; /* Space between rows */
@@ -102,15 +102,16 @@
   display: flex;
   width: 100%; /* Full width */
   margin-bottom: 0px; /* Space between rows */
+  padding: 20px;
+  
 }
 
 .search-bar {
-  flex-grow: 1;
   padding: 10px;
-  border: 1px solid var(--light-gray);
-  height: 20px;
- 
-  outline: none;
+  border: 1px solid var(--light-gray); 
+  border-radius: 5px;
+  width: 300px;
+  max-width: 100%;
 }
 
 .btn-find {
@@ -383,165 +384,231 @@ color: var(--gold-dark);
 
 
 
-/* For devices with a maximum width of 768px (tablets and smaller) */
+
 @media screen and (max-width: 768px) {
+  /* General adjustments for mobile */
+  body {
+    font-size: 14px; /* Smaller font size for better readability */
+    line-height: 1.5;
+    padding: 5px;/* Improved line spacing */
+
+   
+  }
+  
+  
+
   .title-container {
-    padding-top: 30px;
-    height: auto; /* Adjust height */
+    padding-top: 20px;
+    height: auto; 
+    /* Adjust height for mobile */
+    text-align: center;
   }
 
   .title-container img {
-    width: 80%; /* Make the image responsive */
-    margin: 0 auto;
+    width: 80%; /* Responsive image */
+    margin: 0 auto; /* Center the image */
+    display: none; /* Ensure proper alignment */
   }
 
   .first-title {
-    font-size: 24px; /* Smaller font for mobile */
+    font-size: 18px; /* Slightly larger for emphasis */
+    color: var(--dark-gray); /* Consistent color */
+    margin-bottom: 10px; /* Space below title */
   }
 
   .tagline {
-    font-size: 1rem; /* Adjust tagline size */
+    font-size: 1rem; /* Smaller tagline */
+    color: var(--dark-gray); /* Consistent color */
+    margin-top: 5px; /* Space between title and tagline */
   }
 
   .search-container {
-    width: 90%; /* Take up most of the screen */
-    padding: 10px;
-  }
+    display: flex !important; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center !important; /* Center items horizontally */
+    justify-content: center !important; /* Center items vertically */
+    width: auto; /* Adjust width to fit content */
+    padding: 25px; /* Add padding for spacing */
+    margin: 0 auto; /* Center the container horizontally */
+    background-color: var(--white); /* Use a clean background */
+    border: 0px solid var(--light-gray); /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.5s; /* Smooth transition for hover effects */
+    position: relative !important; /* Ensure relative positioning */
+}
+.search-container:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
 
   .row-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    padding: 0;
-    gap: 10px;
+    flex-direction: row; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+    padding: auto;
+    left: 0;
   }
 
+
   .btn {
-    width: 100%; /* Full width buttons */
+   
+    margin: 0;
+    align-items: center;
+    width: 100%; /* Full-width buttons */
+    padding: 12px; /* Comfortable padding */
+    font-size: 1rem; /* Consistent font size */
+    background-color: var(--white); /* Clean background */
+    border: 1px solid var(--light-gray); /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    color: var(--bth-color); /* Consistent color */
+  }
+
+  .btn:hover {
+    background-color: var(--bright-orange); /* Hover effect */
+    color: var(--white); /* Text color on hover */
   }
 
   .row-search {
-    flex-direction: column; /* Stack search bar and button */
+    padding:20px;
+    
+    display: flex !important; /* Use flexbox for layout */
+    flex-direction: column;
+    justify-content: space-around !important; /* Space elements evenly */
+    align-items: center !important; /* Center elements vertically */
+    width: 100%; /* Full width */
     gap: 10px;
-  }
+}
 
   .search-bar {
+    width: 100%; /* Full-width search bar */
+    padding: 12px; /* Comfortable padding */
+    border: 1px solid var(--light-gray); /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  .btn-find {
+    width: 100%; /* Full-width button */
+    padding: 12px; /* Comfortable padding */
+    font-size: 1rem; /* Consistent font size */
+    background-color: var(--bth-color); /* Primary color */
+    border-radius: 5px; /* Rounded corners */
+    color: var(--white); /* Text color */
+  }
+
+  .btn-find:hover {
+    background-color: var(--bright-orange); /* Hover effect */
+  }
+
+  .row-location {
+    text-align: center;
+    margin-top: 10px; /* Space above location text */
+    color: #B8860B;
     width: 100%;
+  }
+
+  .current-location {
+    font-size: 0.9rem; /* Smaller font size */
+    color: #B8860B;
+
+  }
+
+  .featured {
+    padding: 0px 0px; /* Adjust padding for mobile */
+    text-align: center;
+
   }
 
   .property-grid {
-    grid-template-columns: 1fr; /* Single column for small screens */
+    display: flex; /* Use flexbox for horizontal scrolling */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 25px; /* Space between cards */
+    padding: 10px; /* Padding for scrolling area */
+    scroll-snap-type: x mandatory; /* Snap scrolling for better UX */
+
   }
 
-  .property-card {
-    margin: 0 auto; /* Center the cards */
+
+
+
+  .why-us {
+    padding: 20px 10px; /* Adjust padding for mobile */
+    text-align: center;
   }
 
-  .features {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .feature {
-    width: 100%;
-  }
+  
 
   .cta {
-    padding: 30px 10px;
+    padding: 20px 10px; /* Adjust padding for mobile */
+    text-align: center;
   }
 
-  .testimonials, .newsletter, .footer {
-    padding: 20px 10px;
+  .cta-btn {
+    padding: 12px 20px; /* Comfortable padding */
+    font-size: 1rem; /* Consistent font size */
+    background-color: var(--gold-dark); /* Primary color */
+    color: var(--white); /* Text color */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  .testimonials {
+    padding: 20px 10px; /* Adjust padding for mobile */
+    background-color: var(--gold); /* Consistent background */
   }
 
   .testimonial-cards {
     grid-template-columns: 1fr; /* Single column for testimonials */
-  }
-
-  .newsletter-form {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .newsletter-form input {
-    width: 100%;
-  }
-
-  .newsletter-form button {
-    width: 100%;
-  }
-}
-/* Responsive styles for mobile view */
-@media (max-width: 768px) {
-  .property-grid {
-    display: flex; /* Change grid to flexbox */
-    flex-wrap: nowrap; /* Prevent wrapping */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 1px; /* Add spacing between cards */
-    padding: 1px; /* Add padding for scrolling area */
-    scroll-snap-type: x mandatory; /* Snap scrolling for better UX */
-  }
-
-  .property-card {
-    flex: 0 0 80%; /* Each card takes 80% of the container width */
-    scroll-snap-align: center; /* Snap to center of the viewport */
-    margin-right: 10px; /* Add spacing between cards */
-  }
-
-  .property-card img {
-    height: auto; /* Maintain aspect ratio for images */
-    max-height: 150px; /* Limit image height */
-  }
-
-  .view-btn {
-    font-size: 0.9rem; /* Adjust button size for smaller screens */
-  }
-}
-
-/* For devices with a maximum width of 480px (phones) */
-@media screen and (max-width: 480px) {
-  .title-container {
-    text-align: center;
-    padding-top: 20px;
-  }
-
-  .first-title {
-    font-size: 20px;
-  }
-
-  .tagline {
-    font-size: 0.9rem;
-  }
-
-  .btn-find {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-
-  .property-info h3 {
-    font-size: 1.1rem;
-  }
-
-  .property-info p {
-    font-size: 1rem;
-  }
-
-  .newsletter h2 {
-    font-size: 1.5rem;
-  }
-
-  .newsletter p {
-    font-size: 1rem;
-  }
-
-  .cta-btn {
-    font-size: 0.9rem;
-    padding: 8px 15px;
+    gap: 10px; /* Space between cards */
   }
 
   .testimonial-card {
-    padding: 15px;
+    padding: 15px; /* Comfortable padding */
+    background-color: var(--white); /* Clean background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  .testimonial-card p {
+    font-size: 0.9rem; /* Smaller font size */
+    color: var(--dark-gray); /* Consistent color */
+  }
+
+  .testimonial-card span {
+    font-size: 0.9rem; /* Smaller font size */
+    color: var(--bth-color); /* Consistent color */
+  }
+
+  .newsletter {
+    padding: 20px 10px; /* Adjust padding for mobile */
+    text-align: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 10px; /* Space between elements */
+  }
+
+  .newsletter-form input {
+    width: 100%; /* Full-width input */
+    padding: 12px; /* Comfortable padding */
+    border: 1px solid var(--gold); /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  .newsletter-form button {
+    width: 100%; /* Full-width button */
+    padding: 12px; /* Comfortable padding */
+    font-size: 1rem; /* Consistent font size */
+    background-color: var(--gold-dark); /* Primary color */
+    color: var(--white); /* Text color */
+    border-radius: 5px; /* Rounded corners */
   }
 
   .footer {
-    font-size: 0.9rem;
+    padding: 20px 10px; /* Adjust padding for mobile */
+    text-align: center;
+    background-color: var(--cream); /* Consistent background */
+    border-top: 1px solid var(--gold); /* Subtle border */
   }
 }
+
