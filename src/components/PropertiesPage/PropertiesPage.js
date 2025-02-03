@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useLocation } from 'react-router-dom';
@@ -7,26 +8,28 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const PropertiesPage = () => {
   const [properties, setProperties] = useState([]);
+  
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [searchType, setSearchType] = useState('Available');
   const [location, setLocation] = useState('');
   const [price, setPrice] = useState('');
-  const [showFilters, setShowFilters] = useState(false);
 
   // Get query params from the URL
   const locationSearch = useLocation();
   const queryParams = new URLSearchParams(locationSearch.search);
   const searchTypeParam = queryParams.get('search_type');
   const searchQuery = queryParams.get('query');
-
+  console.log(searchQuery)
+  console.log(searchType)
+  
   useEffect(() => {
     setSearchType(searchTypeParam || 'Available');
     setLocation(searchQuery || '');
-    fetchProperties(searchTypeParam, searchQuery, price);
-  }, [searchTypeParam, searchQuery, price]);
+    fetchProperties(searchTypeParam, searchQuery);
+  }, [searchTypeParam, searchQuery]);
 
   // Fetch properties based on filters
-  const fetchProperties = async (searchType, query, price) => {
+  const fetchProperties = async (searchType, query) => {
     const token = Cookies.get('jwt_token');
     const url = `http://localhost:4000/properties?search_type=${searchType}&location=${query}&price=${price}`;
 
@@ -39,44 +42,48 @@ const PropertiesPage = () => {
       const response = await axios.get(url, { headers });
       setProperties(response.data);
       setFilteredProperties(response.data);
+      console.log("api call made")
+      console.log(response)
     } catch (error) {
       console.error('Error fetching properties:', error);
     }
   };
 
-  const handleFilterSubmit = async (e) => {
-    e.preventDefault();
-    await fetchProperties(searchType, location, price);
-    setShowFilters(false); // Close filters on mobile after submit
+  const handleFilterSubmit = async () => {
+
+
+    const token = Cookies.get('jwt_token');
+
+    const url = `http://localhost:4000/properties`;
+    const body ={
+      searchType,location,price
+    }
+    console.log('hgf')
+    console.log(body);
+    console.log(token);
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    };
+
+    try {
+      const response = await axios.get(url,body, { headers });
+      
+      setFilteredProperties(response.data);
+    } catch (error) {
+      console.error('Error fetching filtered properties:', error);
+    }
   };
 
   return (
+   
+    
     <div className="propertiespage-container">
-      {/* Mobile Filter Toggle Button */}
-      <button 
-        className="mobile-filter-toggle"
-        onClick={() => setShowFilters(true)}
-      >
-        Show Filters
-      </button>
-
-      {/* Overlay for Mobile Filters */}
-      <div 
-        className={`sidebar-overlay ${showFilters ? 'active' : ''}`} 
-        onClick={() => setShowFilters(false)}
-      />
-
       {/* Filter Sidebar */}
-      <div className={`propertiespage-filter-sidebar ${showFilters ? 'active' : ''}`}>
-        <button 
-          className="sidebar-close-btn"
-          onClick={() => setShowFilters(false)}
-        >
-          &times;
-        </button>
-        
+      <div className="propertiespage-filter-sidebar">
         <h3>Filter</h3>
-        <form onSubmit={handleFilterSubmit}>
+        <form>
           <div className="propertiespage-filter-option">
             <label htmlFor="searchType">Property Type:</label>
             <select
@@ -110,7 +117,8 @@ const PropertiesPage = () => {
             />
           </div>
           
-          <button type="submit">Apply Filters</button>
+          <button onClick={handleFilterSubmit}>Apply Filters</button>
+
         </form>
       </div>
 
@@ -130,6 +138,7 @@ const PropertiesPage = () => {
                 <div className="propertiespage-property-details">
                   <div className="propertiespage-row">
                     <h3 className="propertiespage-property-title">{property.propertyTitle}</h3>
+                   
                   </div>
                   <div className="propertiespage-row">
                     <p className="propertiespage-address">
@@ -139,9 +148,10 @@ const PropertiesPage = () => {
                   <div className="propertiespage-row">
                     <p className="propertiespage-price">
                       Price: ₹{property.price}
+                      
                     </p>
-                    <p className="propertiespage-builtup">Built-up Area: {property.builtUpArea} sqft</p>
-                    <p className="propertiespage-property-status">Status: {property.propertyStatus}</p>
+                    <p className="propertiespage-builtup">Built-up Area: 122{property.builtUpArea} sqft</p>
+                    <p className="propertiespage-property-status">Status: Available {property.propertyStatus}</p>
                   </div>
                   <div className="propertiespage-row">
                     <p className="propertiespage-description">{property.description}</p>
@@ -152,7 +162,11 @@ const PropertiesPage = () => {
                 <div className="propertiespage-action-buttons">
                   <button className="propertiespage-view-details">View Details</button>
                   <button className="propertiespage-save-property">Save Property</button>
-                  <button>Send Message Request</button>
+                  <button
+                    
+                  >
+                    Send Message Request
+                  </button>
                 </div>
               </div>
             ))
@@ -162,6 +176,7 @@ const PropertiesPage = () => {
         </div>
       </div>
     </div>
+  
   );
 };
 
