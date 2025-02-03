@@ -101,8 +101,18 @@ body {
   transition: background-color 0.3s ease;
 }
 
+<<<<<<< HEAD
 .header-logout-desktop-btn:hover {
   background-color: #c0392b;
+=======
+.nav-menu-item-username {
+  font-family: 'Roboto';
+  text-decoration: none;
+  margin: 10px 0px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #d0b200;
+>>>>>>> 796b8704f5b8cd0d93fa4a9db47c46ab4f09720a
 }
 
 /* Mobile Menu */
