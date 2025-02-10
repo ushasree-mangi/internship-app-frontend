@@ -268,5 +268,5 @@ const AddPropertyPage = () => {
 
 export default AddPropertyPage;
 
-export default AddPropertyPage;*/
+
 
