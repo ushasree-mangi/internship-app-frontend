@@ -2,6 +2,7 @@ import axios  from 'axios'
 import Cookies from 'js-cookie'
 import { useState } from 'react'
 import './PropertyItem.css'
+import { Link } from 'react-router-dom';
 import image from '../../assets/images/no-properties.svg'
 
 const PropertyCard=(props)=>{
@@ -38,6 +39,7 @@ const PropertyCard=(props)=>{
     const onClickChat=()=>{
         sendChatRequest()
     }
+    
 
     return (
         
@@ -61,8 +63,9 @@ const PropertyCard=(props)=>{
                             <div className="PropertyItem-view-btn">
                                 
                                 <button type="button" onClick={onClickChat}>Chat Request</button>
-                          
-                                <button type='button'>View Details</button>
+                                <Link to={ `/view-details?propertyId=${propertyId}` }  >
+                                <button type='button' >View Details</button></Link>
+                               
                             </div>
                         )}
                         

@@ -11,7 +11,7 @@ const AddPropertyPage=()=> {
     description: '',
     price: '',
     imgUrl: '',
-    propertyType:'',
+    propertyType:'rent',
     bedrooms: '',
     bathrooms: '',
     size: '',
@@ -59,7 +59,7 @@ const AddPropertyPage=()=> {
     }
 
     setErrors(newErrors)
-   console.log(errors)
+   console.log(newErrors)
     return Object.keys(newErrors).length === 0;
   }
 
@@ -86,8 +86,44 @@ const AddPropertyPage=()=> {
         console.log(response)
         if(response.status===201){
           alert("Property added successfully")
+          setFormData({ propertyTitle: '',
+            area: '',
+            location:'',
+            description: '',
+            price: '',
+            imgUrl: '',
+            propertyType:'',
+            bedrooms: '',
+            bathrooms: '',
+            size: '',
+            parking: '',
+            amenities: '',
+            furnishingStatus: '',
+            facing: '',
+            waterSupply: '',
+            floor: '',
+            gatedSecurity: '',
+          })
         }else{
           alert("Error occurred while adding Property")
+          setFormData({ propertyTitle: '',
+            area: '',
+            location:'',
+            description: '',
+            price: '',
+            imgUrl: '',
+            propertyType:'',
+            bedrooms: '',
+            bathrooms: '',
+            size: '',
+            parking: '',
+            amenities: '',
+            furnishingStatus: '',
+            facing: '',
+            waterSupply: '',
+            floor: '',
+            gatedSecurity: '',
+          })
         }
         console.log(response.body)
     
@@ -467,3 +503,4 @@ function AddPropertyPage() {
 }
 
 export default AddPropertyPage;*/
+
