@@ -16,6 +16,7 @@ import MyProperties from './components/MyProperties/MyProperties.js'
 import MyPayments from './components/MyPayments/MyPayments.js'
 import PropertiesPage from './components/PropertiesPage/PropertiesPage.js'
 import AddProperty from './components/AddProperty/AddProperty.js'
+import ViewDetails from './components/ViewDetails/ViewDetails.js'
 
 
 import Cookie from 'js-cookie'
@@ -45,6 +46,7 @@ const App = () => {
         <ProtectedRoute exact path='/profile/enquiries' component={Enquiries}/>
         <ProtectedRoute exact path='/properties' component={PropertiesPage}/>
         <ProtectedRoute exact path='/add-property' component={AddProperty}/>
+        <ProtectedRoute exact path='/view-details' component={ViewDetails}/>
       
     </Switch>
   
