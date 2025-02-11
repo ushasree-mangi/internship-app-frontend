@@ -160,9 +160,9 @@ const PropertiesPage = () => {
 
                 {/* Buttons Section */}
                 <div className="propertiespage-action-buttons">
-                  <button className="propertiespage-view-details">View Details</button>
+               <button className="propertiespage-view-details">  <Link className="propertiespage-action-buttons" to={ `/view-details?propertyId=${property.propertyId}` }  >View Details</Link></button>
                   <button className="propertiespage-save-property">Save Property</button>
-                  <button
+                  <button 
                     
                   >
                     Send Message Request
