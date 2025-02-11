@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { ClipLoader } from 'react-spinners';
 import Cookies from 'js-cookie';
 import './MyProfile.css';
-import defaultProfilePic from './default-profile.png';
+
 
 const MyProfile = () => {
     const [userProfileInfo, setProfileInfo] = useState({});
