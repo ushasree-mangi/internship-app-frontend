@@ -87,23 +87,21 @@ class Header extends Component {
                   Add Properties
                 </Link>
               </li>
-              
+
               <li className="header-nav-menu-item">
                 <Link to="/profile/myProfile" className="header-nav-link">
                   <CgProfile className="header-user-icon" /> {username}
                 </Link>
-                
+
               </li>
-              
-            
-           
-            <button
-              type="button"
-              className="header-logout-desktop-btn header-nav-menu-item header-nav-link"
-              onClick={this.onClickLogout}
-            >
-              Logout
-            </button>
+
+
+
+              <li className="header-nav-menu-item">
+                <button type="button" className="header-logout-desktop-btn" onClick={this.onClickLogout}>
+                  Logout
+                </button>
+              </li>
             </ul>
           </div>
 

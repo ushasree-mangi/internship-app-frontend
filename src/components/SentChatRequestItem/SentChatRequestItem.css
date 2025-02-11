@@ -71,6 +71,16 @@
 .chat-msg-icon{
     font-size: 24px;
 }
+.chat-msg-btn{
+    background-color: #D4AF37;
+    display: block;
+    width: 90px !important;
+    color: #fff;
+    height: 38px !important;
+    border: none;
+    font-size: 15px;
+    border-radius: 8px;
+}
 .property-box{
     border: 0.5px ridge gray;
     width: 270px;
