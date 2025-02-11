@@ -2,73 +2,111 @@
 .my-profile-page-container {
     display: flex;
     min-height: 100vh;
-
-
     font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
 }
 
+/* Sidebar */
+.my-profile-sidebar {
+    flex: 0.3;
+    border-right: 2px solid #f5b642;
+    padding: 20px;
+}
+
+/* Profile Content */
 .my-profile-content {
     flex: 1;
-    padding: 40px;
     display: flex;
     flex-direction: column;
+    
+    padding: 40px;
+    border-spacing: 20px;
+}
+
+.profile-header {
+    display: flex;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    justify-content: space-between;
 }
 
-h1 {
-    font-size: 26px;
+.profile-picture {
+    width: 80px;
+    height: 40px;
+    
+    border-radius: 50%;
+    border: 4px solid #f5b642;
+
+}
+
+.profile-details {
+    flex: 1;
+    margin-left: 20px;
+   
+}
+
+.profile-username {
+    font-size: 24px;
     font-weight: bold;
-    color: #f5b642; /* Gold */
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    color: #333;
 }
 
-p {
-    font-size: 18px;
-    margin: 8px 0;
-
+.edit-profile-btn {
+    background-color: #f5b642;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
+.edit-profile-btn:hover {
+    background-color: #e6a933;
+}
+
+/* Stats Section */
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5b642;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Profile Info */
 .profile-info {
-    background: rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid #f5b642; /* Gold border */
-    width: 80%;
+    border: 2px solid #f5b642;
+    width: 100%;
     max-width: 500px;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(245, 182, 66, 0.2);
 }
 
-/* Loading and Error Styles */
-.loading-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.products-error-view-container {
-    text-align: center;
-    padding: 30px;
-}
-
-.products-error-view-container img {
-    width: 80%;
-    max-width: 350px;
-}
-
-.product-failure-heading-text {
-    font-size: 22px;
-    font-weight: bold;
-    color: #ff4f4f; /* Error red */
-    margin-top: 10px;
-}
-
-.products-failure-description {
+.profile-info p {
     font-size: 16px;
-    color: #ddd;
+    color: #333;
+    margin: 8px 0;
 }
 
 /* Responsive Design */
@@ -76,15 +114,22 @@ p {
     .my-profile-page-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
-    .profile-info {
-        width: 90%;
+    .profile-details {
+        margin-left: 0;
+        margin-top: 10px;
     }
 
-    p {
-        font-size: 16px;
+    .profile-stats {
+        max-width: 100%;
+        justify-content: space-between;
     }
 }
 
@@ -93,15 +138,33 @@ p {
         padding: 20px;
     }
 
-    h1 {
-        font-size: 22px;
+    .profile-picture {
+        width: 50px;
+
+    }
+
+    .profile-username {
+        font-size: 20px;
+    }
+
+    .edit-profile-btn {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .stat-number {
+        font-size: 18px;
+    }
+
+    .stat-label {
+        font-size: 12px;
     }
 
     .profile-info {
         padding: 15px;
     }
 
-    p {
+    .profile-info p {
         font-size: 14px;
     }
 }
