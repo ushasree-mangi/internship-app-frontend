@@ -2,6 +2,21 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import "./ViewDetails.css";
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+
+
+// Fix for default marker icon in Leaflet
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
+
+const customIcon = new L.Icon({
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
 
 const ViewDetails = (props) => {
   const [propertyDetails, setPropertyDetails] = useState({
@@ -10,7 +25,22 @@ const ViewDetails = (props) => {
     price: "Loading...",
     description: "Fetching details...",
   });
-
+  const PropertyMap = ({ latitude, longitude }) => {
+    const defaultPosition = [20.5937, 78.9629]; // India's center coordinates
+  
+    return (
+      <MapContainer
+        center={latitude && longitude ? [latitude, longitude] : defaultPosition}
+        zoom={latitude && longitude ? 16 : 5} // Zoom in for property, else wider view of India
+        style={{ height: "400px", width: "100%" }}
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+  
+        {latitude && longitude && <Marker position={[latitude, longitude]} icon={customIcon} />}
+      </MapContainer>
+    );
+  };
+  
   const params = new URLSearchParams(props.location.search);
   const propertyId = params.get("propertyId");
 
@@ -128,6 +158,13 @@ const ViewDetails = (props) => {
           )}
         </div>
       </div>
+      <div className="property-map">
+  <h2>Location</h2>
+  <PropertyMap 
+    latitude={propertyDetails.mapLatitude} 
+    longitude={propertyDetails.mapLongitude} 
+  />
+</div>
 
       {/* Action Buttons */}
       <div className="action-buttons">
@@ -143,6 +180,7 @@ const ViewDetails = (props) => {
           <span className="tooltip-text">Message Owner</span>
         </button>
       </div>
+
     </div>
   );
 };
