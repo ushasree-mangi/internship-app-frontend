@@ -20,7 +20,7 @@ const ViewDetails=(props)=>{
 
                       if (token !== undefined) {
                         
-                            const url=`https://gts-rental-app.onrender.com/property-details?propertyId=${propertyId}`
+                            const url=`https://internship-app-backend-production.up.railway.app/property-details?propertyId=${propertyId}`
                             
                          
                             const headers= {

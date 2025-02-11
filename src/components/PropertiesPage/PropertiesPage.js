@@ -31,7 +31,7 @@ const PropertiesPage = () => {
   // Fetch properties based on filters
   const fetchProperties = async (searchType, query) => {
     const token = Cookies.get('jwt_token');
-    const url = `https://gts-rental-app.onrender.com/properties?search_type=${searchType}&location=${query}&price=${price}`;
+    const url = `https://internship-app-backend-production.up.railway.app/properties?search_type=${searchType}&location=${query}&price=${price}`;
 
     const headers = {
       'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const PropertiesPage = () => {
 
     const token = Cookies.get('jwt_token');
 
-    const url = `https://gts-rental-app.onrender.com/properties`;
+    const url = `https://internship-app-backend-production.up.railway.app/properties`;
     const body ={
       searchType,location,price
     }

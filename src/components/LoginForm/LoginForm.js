@@ -33,7 +33,7 @@ class LoginForm extends Component {
 
     localStorage.setItem("userId",userId)
 
-    /* const socket = io('https://gts-rental-app.onrender.com', {
+    /* const socket = io('https://internship-app-backend-production.up.railway.app', {
             path: '/socket.io',  // Same WebSocket path as server
             transports: ['websocket', 'polling'], // Include polling
         });
@@ -73,7 +73,7 @@ class LoginForm extends Component {
     this.setState({showApiStatusText:true,
       apiStatusText:"verifying...."
     })
-    const url = 'https://gts-rental-app.onrender.com/login'
+    const url = 'https://internship-app-backend-production.up.railway.app/login'
     const options = {
       method: 'POST',
       headers: {

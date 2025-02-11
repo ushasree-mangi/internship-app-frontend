@@ -16,7 +16,7 @@ const ChatRequestItem=(props)=>{
     
     const changeChatStatus=async(chatId,statusText)=>{
         const token=Cookies.get("jwt_token")
-           const url="https://gts-rental-app.onrender.com/update-chat-status"
+           const url="https://internship-app-backend-production.up.railway.app/update-chat-status"
            const headers= {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,

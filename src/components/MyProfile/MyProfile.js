@@ -23,7 +23,7 @@ const MyProfile=()=>{
           
             
               if (token !== undefined) {
-                  const url="https://gts-rental-app.onrender.com/user-profile"
+                  const url="https://internship-app-backend-production.up.railway.app/user-profile"
                   const options = {
                     method: 'GET',
                     headers: {
