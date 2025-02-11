@@ -51,7 +51,7 @@ class RegisterForm extends Component {
     this.setState({showApiStatusText:true,
       apiStatusText:"verifying...."
     })
-    const url = 'http://localhost:4000/register'
+    const url = 'https://gts-rental-app.onrender.com/register'
     const options = {
       method: 'POST',
       headers: {
@@ -252,7 +252,7 @@ const RegisterForm = (props) => {
         if (validateForm()) {
             console.log("Form Data:", formData);
             // Add logic to send data to backend using Node.js and SQLite
-            const apiUrl="http://localhost:4000/register"
+            const apiUrl="https://gts-rental-app.onrender.com/register"
             const body=formData
 
             const response =await axios.post(apiUrl,body)

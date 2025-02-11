@@ -33,7 +33,7 @@ class LoginForm extends Component {
 
     localStorage.setItem("userId",userId)
 
-    /* const socket = io('http://localhost:4000', {
+    /* const socket = io('https://gts-rental-app.onrender.com', {
             path: '/socket.io',  // Same WebSocket path as server
             transports: ['websocket', 'polling'], // Include polling
         });
@@ -73,7 +73,7 @@ class LoginForm extends Component {
     this.setState({showApiStatusText:true,
       apiStatusText:"verifying...."
     })
-    const url = 'http://localhost:4000/login'
+    const url = 'https://gts-rental-app.onrender.com/login'
     const options = {
       method: 'POST',
       headers: {

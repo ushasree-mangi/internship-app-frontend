@@ -16,7 +16,7 @@ const MyContacts = () => {
         const getSentChatRequests = async () => {
 
             const token = Cookies.get("jwt_token")
-            const url = "http://localhost:4000/sent-chat-requests"
+            const url = "https://gts-rental-app.onrender.com/sent-chat-requests"
             const headers = {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,

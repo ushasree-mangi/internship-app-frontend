@@ -15,7 +15,7 @@ const MyProperties = () => {
         const getProperties = async () => {
             const token = Cookies.get('jwt_token')
             console.log(`inside the home ${token}`)
-            const url = "http://localhost:4000/properties/owner"
+            const url = "https://gts-rental-app.onrender.com/properties/owner"
             const headers = {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,

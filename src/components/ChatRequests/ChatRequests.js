@@ -32,7 +32,7 @@ const ChatRequests = () => {
        const  getReceivedChatRequests=async()=>{
 
            const token=Cookies.get("jwt_token")
-           const url="http://localhost:4000/received-chat-requests"
+           const url="https://gts-rental-app.onrender.com/received-chat-requests"
            const headers= {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
@@ -48,7 +48,7 @@ const ChatRequests = () => {
        const getSentChatRequests=async()=>{
 
         const token=Cookies.get("jwt_token")
-        const url="http://localhost:4000/sent-chat-requests"
+        const url="https://gts-rental-app.onrender.com/sent-chat-requests"
         const headers= {
          'Content-Type': 'application/json',
          'Authorization': `Bearer ${token}`,
@@ -65,7 +65,7 @@ const ChatRequests = () => {
 
        
 
-       const socket = io('http://localhost:4000', {
+       const socket = io('https://gts-rental-app.onrender.com', {
         path: '/socket.io',  // Same WebSocket path as server
         transports: ['websocket', 'polling'], // Include polling
     });
