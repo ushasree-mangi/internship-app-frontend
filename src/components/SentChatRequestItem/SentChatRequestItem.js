@@ -17,81 +17,71 @@ const SentChatRequestItem = (props) => {
     }
 
     return (
-        <div className="card" key={chatId}>
-            <div className='card-header-one'>
-                <h4> {propertyTitle} For Sale in Hyderabad</h4>
-                <p>Independent House, opposite to brand factory,SR nagar , Hyderabad</p>
-            </div>
+        <div className='container'>
+            <div className="card container" key={chatId}>
+                <div className='card-header-one'>
+                    <h4> {propertyTitle} For Sale in Hyderabad</h4>
+                    <p>Independent House, opposite to brand factory,SR nagar, Hyderabad</p>
+                </div>
+                <br></br>
 
-            <div className='card-header-two'>
-                <LiaRupeeSignSolid className='rupee-icon' />|
-                <h5> ₹{ }Lacs </h5>|
-                <h5>₹{ }/Month</h5>|
-                <h5>{ }sqft</h5>
-            </div>
-
-            <div className='card-body'>
-                <div>
+                <div className='card-body'>
+                    
                     <img src={img} alt="" />
 
-                </div>
-                <div>
-                    {/* <p>Owner Name : {username}</p>
-                    <p>Chat Request Status:  {status}</p>
 
-                    {status === "accepted" && <button onClick={onClickSendMessage} className='send-message-btn'><PiChatDotsLight className='chat-msg-icon'/> &nbsp;Chat</button>} */}
-                    <div className='property-box'>
-                        <div className='property-sub-box1'>
-                            <div className='icon-paragraph'>
-                                <div><RiCompass3Line className='compass' /></div>
-                                <div className='compass-paragraph'>
-                                    <h5>Don't know</h5>
-                                    <p>Facing</p>
+                    <div>
+                        <div className='property-box'>
+                            <div className='property-sub-box1'>
+                                <div className='icon-paragraph'>
+                                    <div><RiCompass3Line className='compass' /></div>
+                                    <div className='compass-paragraph'>
+                                        <h5>Don't know</h5>
+                                        <p>Facing</p>
+                                    </div>
+                                </div>
+                                <div className='icon-paragraph'>
+                                    <div><PiBuildingDuotone className='building' /></div>
+                                    <div className='building-paragraph'>
+                                        <h5>{propertyTitle}</h5>
+                                        <p>Appartment Type</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className='icon-paragraph'>
-                                <div><PiBuildingDuotone className='building' /></div>
-                                <div className='building-paragraph'>
-                                    <h5>{propertyTitle}</h5>
-                                    <p>Appartment Type</p>
+
+                            <div className='property-sub-box1'>
+                                <div className='icon-paragraph'>
+                                    <div><LiaBathSolid className='bathroom' /></div>
+                                    <div className='bathroom-paragraph'>
+                                        <h5>1</h5>
+                                        <p>Bathrooms</p>
+                                    </div>
+                                </div>
+                                <div className='icon-paragraph'>
+                                    <div><CiParking1 className='parking' /></div>
+                                    <div className='parking-paragraph'>
+                                        <h5>None</h5>
+                                        <p>Parking</p>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+                        <div className='property-sub-box2'>
 
-                        <div className='property-sub-box1'>
-                            <div className='icon-paragraph'>
-                                <div><LiaBathSolid className='bathroom' /></div>
-                                <div className='bathroom-paragraph'>
-                                    <h5>1</h5>
-                                    <p>Bathrooms</p>
-                                </div>
+                            <div>
+                                {status === "accepted" && <button onClick={onClickSendMessage} className='chat-message-btn'><PiChatDotsLight className='chat-msg-icon' /> &nbsp;Chat</button>}
                             </div>
-                            <div className='icon-paragraph'>
-                                <div><CiParking1 className='parking' /></div>
-                                <div className='parking-paragraph'>
-                                    <h5>None</h5>
-                                    <p>Parking</p>
-                                </div>
+                            <div>
+                                <button className='chat-message-btn'><MdOutlineCall className='chat-msg-icon' /> &nbsp;Call</button>
                             </div>
                         </div>
 
                     </div>
-                    <div className='property-sub-box2'>
-                        
-                        <div>
-                            <GoHeart className='heart' />
-                        </div>
-                        <div>
-                            {status === "accepted" && <button onClick={onClickSendMessage} className='send-message-btn'><PiChatDotsLight className='chat-msg-icon' /> &nbsp;Chat</button>}
-                        </div>
-                        <div>
-                            <button className='send-message-btn'><MdOutlineCall className='chat-msg-icon' /> &nbsp;Call</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
+
     )
 
 }

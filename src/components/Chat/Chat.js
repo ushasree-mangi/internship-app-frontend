@@ -124,7 +124,7 @@ const Chat = (props) => {
           onChange={(e) => setMessageContent(e.target.value)}
           className="chat-input"
         />
-        <button onClick={handleSendMessage} className="chat-seller-button">
+        <button type='submit' onClick={handleSendMessage} className="chat-seller-button">
           Send
         </button>
       </div>

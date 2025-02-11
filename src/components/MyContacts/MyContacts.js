@@ -56,7 +56,7 @@ const MyContacts = () => {
 
                     </div>
                     <div className="requests-list">
-                        {sentRequestsArray.length === 0 ? <p>No requests</p> : sentRequestsArray.map((request) => (
+                        {sentRequestsArray.length === 0 ? <center><p>No requests</p></center> : sentRequestsArray.map((request) => (
                             <SentChatRequestItem key={request.chatId} chatRequestItemDetails={request} />
 
                         ))}

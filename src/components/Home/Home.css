@@ -298,6 +298,9 @@ color: var(--gold-dark);
   color: #444;
 
 }
+.testimonials h2{
+  padding-bottom: 30px;
+}
 
 .testimonial-cards {
   display: grid;
