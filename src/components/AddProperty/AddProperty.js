@@ -19,131 +19,120 @@ const customIcon = new L.Icon({
 
 const AddPropertyPage = () => {
   const [formData, setFormData] = useState({
-    propertyTitle: '',
-    area: '',
-    location:'',
-    description: '',
-    price: '',
-    imgUrl: '',
-    propertyType:'rent',
-    bedrooms: '',
-    bathrooms: '',
-    size: '',
-    parking: '',
-    amenities: '',
-    furnishingStatus: '',
-    facing: '',
-    waterSupply: '',
-    floor: '',
-    gatedSecurity: '',
+    propertyTitle: "",
+    price: "",
+    propertyType: "",
+    description: "",
+    address: "",
+    street: "",
+    city: "",
+    state: "",
+    pinCode: "",
+    priceNegotiable: false,
+    builtUpArea: "",
+    carpetArea: "",
+    propertyAge: "",
+    wallpaper: null,
+    supportingImages: [],
+    latitude: null,
+    longitude: null,
   });
 
-  const [errors, setErrors] = useState({});
-  
+  // Get user's current location on page load
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        setFormData((prev) => ({ ...prev, latitude, longitude }));
+        fetchLocationDetails(latitude, longitude);
+      },
+      (error) => console.error("Error getting user location:", error),
+      { enableHighAccuracy: true }
+    );
+  }, []);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  // Fetch location details using reverse geocoding
+  const fetchLocationDetails = async (lat, lon) => {
+    try {
+      const response = await axios.get(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+      );
+
+      if (response.data && response.data.address) {
+        const { address } = response.data;
+
+        setFormData((prev) => ({
+          ...prev,
+          address: address.road || address.village || address.hamlet || "",
+          street: address.suburb || address.neighbourhood || "",
+          city: address.city || address.town || address.village || "",
+          state: address.state || "",
+          pinCode: address.postcode || "",
+        }));
+      } else {
+        console.error("Location data is missing in response:", response.data);
+      }
+    } catch (error) {
+      console.error("Error fetching location details:", error);
+    }
   };
 
-  const validateForm=()=>{
-    const newErrors={}
+  // Handle map click and update location details
+  const handleMapClick = (e) => {
+    const { lat, lng } = e.latlng;
+    setFormData((prev) => ({ ...prev, latitude: lat, longitude: lng }));
+    fetchLocationDetails(lat, lng);
+  };
 
-    // Client-side validation 
-    if (!formData.propertyTitle) {
-      newErrors.propertyTitle=true
+  // Custom component to handle map events
+  const LocationPicker = () => {
+    useMapEvents({
+      click: handleMapClick,
+    });
+    return null;
+  };
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  // ✅ **Handle Form Submission**
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevents default form submission
+
+    try {
+      const apiUrl = "http://localhost:4000/add-properties";
+      const token = Cookies.get("jwt_token"); // Get JWT token from cookies
+
+      if (!token) {
+        alert("Authentication token is missing!");
+        return;
+      }
+
+      const headers = {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      };
+
+      const response = await axios.post(apiUrl, formData, { headers });
+
+      console.log(response);
+
+      if (response.status === 201) {
+        alert("Property added successfully!");
+      } else {
+        alert("Error occurred while adding property.");
+      }
+    } catch (error) {
+      console.error("Error adding property:", error);
+      alert("An error occurred. Please try again.");
     }
-    if(!formData.price){
-       newErrors.price=true
-    }
-
-    if(!formData.description){
-      newErrors.description=true
-    }
-
-    if(!formData.imgUrl){
-      newErrors.imgUrl=true
-    }
-
-    if(!formData.location){
-      newErrors.location=true
-    }
-
-    if(!formData.propertyType){
-      newErrors.propertyType=true
-    }
-
-    setErrors(newErrors)
-   console.log(newErrors)
-    return Object.keys(newErrors).length === 0;
-  }
-
-  const handleSubmit = async(e) => {
-    e.preventDefault();
-    
-   console.log(validateForm())
-
-    
-    if(validateForm()){
-        const apiUrl="http://localhost:4000/add-properties"
-
-        const body=formData
-
-        const token =Cookies.get("jwt_token")
-
-        const headers= {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-          }
-
-        const response=await axios.post(apiUrl,body ,{headers})
-
-        console.log(response)
-        if(response.status===201){
-          alert("Property added successfully")
-          setFormData({ propertyTitle: '',
-            area: '',
-            location:'',
-            description: '',
-            price: '',
-            imgUrl: '',
-            propertyType:'',
-            bedrooms: '',
-            bathrooms: '',
-            size: '',
-            parking: '',
-            amenities: '',
-            furnishingStatus: '',
-            facing: '',
-            waterSupply: '',
-            floor: '',
-            gatedSecurity: '',
-          })
-        }else{
-          alert("Error occurred while adding Property")
-          setFormData({ propertyTitle: '',
-            area: '',
-            location:'',
-            description: '',
-            price: '',
-            imgUrl: '',
-            propertyType:'',
-            bedrooms: '',
-            bathrooms: '',
-            size: '',
-            parking: '',
-            amenities: '',
-            furnishingStatus: '',
-            facing: '',
-            waterSupply: '',
-            floor: '',
-            gatedSecurity: '',
-          })
-        }
-        console.log(response.body)
-    
-    }
-   
-  }; 
+  };
 
   return (
     <div className="add-property-container">
@@ -267,6 +256,3 @@ const AddPropertyPage = () => {
 };
 
 export default AddPropertyPage;
-
-
-
