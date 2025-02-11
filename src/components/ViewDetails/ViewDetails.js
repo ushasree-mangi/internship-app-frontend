@@ -20,7 +20,7 @@ const ViewDetails=(props)=>{
 
                       if (token !== undefined) {
                         
-                            const url=`http://localhost:4000/property-details?propertyId=${propertyId}`
+                            const url=`https://gts-rental-app.onrender.com/property-details?propertyId=${propertyId}`
                             
                          
                             const headers= {

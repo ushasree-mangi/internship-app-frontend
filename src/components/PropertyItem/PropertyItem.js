@@ -19,7 +19,7 @@ const PropertyCard=(props)=>{
   const jwtToken=Cookies.get("jwt_token")
     const sendChatRequest=async()=>{
         const token = Cookies.get('jwt_token')
-        const url="http://localhost:4000/chat-request"
+        const url="https://gts-rental-app.onrender.com/chat-request"
         const headers= {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,

@@ -21,7 +21,7 @@ const Home = () => {
     const getProperties = async () => {
       const token = Cookies.get('jwt_token');
       
-      const url = "http://localhost:4000/properties";
+      const url = "https://gts-rental-app.onrender.com/properties";
 
       const headers = {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Home = () => {
     getProperties();
 
     // WebSocket connection
-    const socket = io('http://localhost:4000', {
+    const socket = io('https://gts-rental-app.onrender.com', {
       path: '/socket.io',  // Same WebSocket path as server
       transports: ['websocket', 'polling'], // Include polling
     });

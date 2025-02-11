@@ -106,7 +106,7 @@ const AddPropertyPage = () => {
     e.preventDefault(); // Prevents default form submission
 
     try {
-      const apiUrl = "http://localhost:4000/add-properties";
+      const apiUrl = "https://gts-rental-app.onrender.com/add-properties";
       const token = Cookies.get("jwt_token"); // Get JWT token from cookies
 
       if (!token) {

@@ -19,7 +19,7 @@ const Chat = (props) => {
     console.log("chat ui effect is executing")
     const getChatMessages = async () => {
       const token = Cookies.get("jwt_token");
-      const url = `http://localhost:4000/get-chat-messages?chatId=${chatId}`;
+      const url = `https://gts-rental-app.onrender.com/get-chat-messages?chatId=${chatId}`;
       const headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
@@ -33,7 +33,7 @@ const Chat = (props) => {
 
     getChatMessages();
 
-    const socket = io('http://localhost:4000', {
+    const socket = io('https://gts-rental-app.onrender.com', {
       path: '/socket.io',
       transports: ['websocket', 'polling'],
     });
@@ -61,7 +61,7 @@ const Chat = (props) => {
   const handleSendMessage = async () => {
     if (messageContent.trim() !== "") {
       const token = Cookies.get("jwt_token");
-      const url = "http://localhost:4000/add-chat-message";
+      const url = "https://gts-rental-app.onrender.com/add-chat-message";
       const headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
