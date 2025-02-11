@@ -21,7 +21,7 @@ class Header extends Component {
     try {
       const token = Cookies.get('jwt_token');
       if (token !== undefined) {
-        const url = 'https://gts-rental-app.onrender.com/user-profile';
+        const url = 'https://internship-app-backend-production.up.railway.app/user-profile';
         const options = {
           method: 'GET',
           headers: {

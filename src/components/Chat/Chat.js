@@ -24,7 +24,7 @@ const Chat = (props) => {
 
     const getChatMessages = async () => {
       const token = Cookies.get("jwt_token");
-      const url = `https://gts-rental-app.onrender.com/get-chat-messages?chatId=${chatId}`;
+      const url = `https://internship-app-backend-production.up.railway.app/get-chat-messages?chatId=${chatId}`;
       const headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
@@ -38,7 +38,7 @@ const Chat = (props) => {
 
     getChatMessages();
 
-    const socket = io('https://gts-rental-app.onrender.com', {
+    const socket = io('https://internship-app-backend-production.up.railway.app', {
       path: '/socket.io',
       transports: ['websocket', 'polling'],
     });
@@ -66,7 +66,7 @@ const Chat = (props) => {
   const handleSendMessage = async () => {
     if (messageContent.trim() !== "") {
       const token = Cookies.get("jwt_token");
-      const url = "https://gts-rental-app.onrender.com/add-chat-message";
+      const url = "https://internship-app-backend-production.up.railway.app/add-chat-message";
       const headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
