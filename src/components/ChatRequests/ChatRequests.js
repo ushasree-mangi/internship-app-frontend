@@ -107,14 +107,14 @@ const ChatRequests = () => {
             <div className="requests-section" style={{ width:{widthOfChatRequestsView} }}>
                 <h2>Received Chat Requests</h2>
                 <div className="requests-list">
-                    {receivedRequestsArray.length===0?<p>No requests</p>:receivedRequestsArray.map((request) => (
+                    {receivedRequestsArray.length===0?<center><h4>No requests</h4></center>:receivedRequestsArray.map((request) => (
                         <ChatRequestItem key={request.chatId} showChatView={showChatView} chatRequestItemDetails={request}/>
                         
                     ))}
                 </div>
                 <h2>Sent Chat Requests</h2>
                 <div className="requests-list">
-                {sentRequestsArray.length===0?<p>No requests</p>:sentRequestsArray.map((request) => (
+                {sentRequestsArray.length===0?<center><h4>No requests</h4></center>:sentRequestsArray.map((request) => (
                         <SentChatRequestItem key={request.chatId} showChatView={showChatView} chatRequestItemDetails={request}/>
                         
                     ))}

@@ -39,13 +39,30 @@ const MyProfile = () => {
         <div className='my-profile-page-container'>
             <ProfileSidebar />
             <div className='my-profile-content'>
+                <p>Edit your profile</p>
+                <br></br>
+                <hr></hr>
                 <div className='profile-card'>
-                  
-                    <h2>{userProfileInfo.username}</h2>
-                    <p>{userProfileInfo.email}</p>
-                    <p>{userProfileInfo.phoneNumber}</p>
-                    <button className='edit-profile-btn'>Edit Details</button>
+                    <div className="myprofile-field">
+                        <label className='myprofile-label'>Name</label>
+                        <input type='text' className='myprofile-input-box' value={userProfileInfo.username} readOnly />
+                    </div>
+
+                    <div className="myprofile-field">
+                        <label className='myprofile-label'>Email</label>
+                        <input type='email' className='myprofile-input-box' value={userProfileInfo.email} readOnly />
+                    </div>
+
+                    <div className="myprofile-field">
+                        <label className='myprofile-label'>Phone Number</label>
+                        <input type='text' className='myprofile-input-box' value={userProfileInfo.phoneNumber} readOnly />
+                    </div>
+
+                    <center>                    
+                        <button className='edit-profile-btn'>Save Profile</button>
+                    </center>
                 </div>
+
                 <div className='profile-stats'>
                     <div className='stat-box'><span>{stats.properties}</span> Properties</div>
                     <div className='stat-box'><span>{stats.chatReceived}</span> Chat Requests Received</div>

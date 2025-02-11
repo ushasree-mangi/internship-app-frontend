@@ -2,7 +2,7 @@
 .my-shortlists-page-container {
     display: flex;
     min-height: 100vh;
-
+    padding: 10px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -18,7 +18,7 @@
 h1 {
     font-size: 26px;
     font-weight: bold;
-    color: #f5b642; /* Gold */
+    color: var(--gold); /* Gold */
     margin-bottom: 20px;
     text-transform: uppercase;
 }
