@@ -25,8 +25,8 @@
     margin: 0;
     color: #777;
 }
-.send-message-btn{
-    background-color: #0BDA51;
+.chatreq-send-message-btn{
+    background-color: var(--gold);
     display: block;
     width: 120px !important;
     color: #fff;

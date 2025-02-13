@@ -18,7 +18,7 @@ const SentChatRequestItem = (props) => {
 
     return (
         <div className='container'>
-            <div className="card container" key={chatId}>
+            <div className="card " key={chatId}>
                 <div className='card-header-one'>
                     <h4> {propertyTitle} For Sale in Hyderabad</h4>
                     <p>Independent House, opposite to brand factory,SR nagar, Hyderabad</p>

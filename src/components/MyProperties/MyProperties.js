@@ -56,7 +56,7 @@ const MyProperties = () => {
                             <img src={image}></img>
                             <h4>No Properties Posted</h4>
                             <p>Want to Post A Property Now?</p>
-                            <button className='send-message-btn'> &nbsp;Post Now</button>
+                            <button className='myproperties-message-btn'> &nbsp;Post Now</button>
                         </center>
                     </div>:propertiesArray.map((eachItem)=>{
                 

@@ -5,8 +5,7 @@
     padding: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
-   margin-left: 200px;
-   margin-right: -190px;
+ 
 }
 .card button{
     margin: 15px;
@@ -89,7 +88,7 @@
 
 .property-box{
     border: 0.5px ridge gray;
-    width: 270px;
+    width: 260px;
     height: 130px;
     margin-left: 12px;
     padding: 3px;
@@ -133,15 +132,13 @@
         padding: 0;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s ease-in-out;
-        margin-left: 100px;
-        margin-right: -100px;
+      
     }
 }
 
 @media (max-width: 1074px) {
     .card {
         width: 90%;
-        max-width: 500px;
         margin: 30px -40px 30px 40px;
     }
 
@@ -158,13 +155,19 @@
 
     .card-body img {
         width: 100%;
-        max-width: 250px;
-        height: auto;
+        height: 180px;
+        margin-bottom: 20px;
     }
 
-    .property-box {
-        max-width: 90%;
-        margin: 10px auto;
+    .property-box{
+        border: 0.5px ridge gray;
+        width: 390px;
+        height: 130px;
+        padding: 5px;
+        align-items: start;
+        justify-content: start;
+        padding-left: 75px;
+        margin-right: 10px;
     }
 }
 
@@ -188,16 +191,16 @@
 
     .card-body img {
         width: 100%;
-        max-width: 250px;
-        height: auto;
+        height: 180px;
     }
 
     .property-box{
         border: 0.5px ridge gray;
-        width: 270px;
-        height: 150px;
-        margin-left: 12px;
-        padding: 3px;
+        width: 390px;
+        height: 130px;
+        padding: 5px;
+        padding-left: 75px;
+        margin-right: 10px;
     }
 }
 @media (max-width: 662px)  {
@@ -219,17 +222,17 @@
     }
 
     .card-body img {
-        width: 100%;
-        max-width: 250px;
-        height: auto;
+        width: 600px;
+        height: 180;
     }
 
     .property-box{
         border: 0.5px ridge gray;
-        width: 270px;
-        height: 150px;
-        margin-left: 12px;
-        padding: 3px;
+        width: 380px;
+        height: 130px;
+        padding: 5px;
+        padding-left: 75px;
+        margin-right: 10px;
     }
 }
 @media (max-width: 962px)  {
@@ -252,16 +255,16 @@
 
     .card-body img {
         width: 100%;
-        max-width: 250px;
-        height: auto;
+        height: 180px;
     }
 
     .property-box{
         border: 0.5px ridge gray;
-        width: 270px;
-        height: 150px;
-        margin-left: 12px;
-        padding: 3px;
+        width: 390px;
+        height: 130px;
+        padding: 5px;
+        padding-left: 75px;
+        margin-right: 10px;
     }
 }
 @media (max-width: 767px) {
@@ -283,20 +286,22 @@
     }
 
     .card-body img{
-        width: 200px;
-        height: 150px;
+        width: 100%;
+        height: 180px;
     }
 
     .property-box{
         border: 0.5px ridge gray;
-        width: 270px;
-        height: 150px;
-        padding: 3px;
+        width: 370px;
+        height: 130px;
+        padding: 5px;
+        padding-left: 75px;
+        margin-right: 10px;
     }
 }
 @media (max-width: 576px) {
     .card {
-        width: 90%;
+        width: 80%;
         padding: 10px;
     }
 
@@ -309,7 +314,7 @@
     }
 
     .card-body img{
-        width: 200px;
+        width: 100%;
         height: 150px;
     }
 
@@ -320,16 +325,17 @@
 
     .property-box{
         border: 0.5px ridge gray;
-        width: 270px;
-        height: 150px;
-        padding: 3px;
+        width: 290px;
+        height: 130px;
+        padding: 5px;
+        padding-left: 35px;
+        margin-right: 10px;
     }
 }
 @media (max-width: 480px) {
     .card {
-        width: 90%;
+        width: 80%;
         padding: 10px;
-        margin-left: 10px;
     }
 
     .card-header-one, .card-header-two {
@@ -342,13 +348,154 @@
 
     .card-body img {
         width: 100%;
-        max-width: 150px;
+        height: 150px;
     }
 
-    .property-box {
+    .property-box{
+        border: 0.5px ridge gray;
         width: 100%;
-        max-width: 80%;
-        margin-left: 25px;
+        height: 150px;
+        padding: 3px;
+        padding-left: 20px;
+        margin-right: 20px;
+    }
+
+    .chat-message-btn, .send-message-btn {
+        width: 100%;
+        font-size: 13px;
+    }
+
+   
+}
+@media (max-width: 475px) {
+    .card {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .card-header-one, .card-header-two {
+        text-align: center;
+    }
+
+    .card-body {
+        flex-direction: column;
+    }
+
+    .card-body img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .property-box{
+        border: 0.5px ridge gray;
+        width: 95%;
+        height: 150px;
+        padding: 3px;
+        padding-left: 20px;
+        margin-right: 40px;
+    }
+
+    .chat-message-btn, .send-message-btn {
+        width: 100%;
+        font-size: 13px;
+    }
+
+   
+}
+
+@media (max-width: 450px) {
+    .card {
+        width: 70%;
+        padding: 10px;
+    }
+
+    .card-header-one, .card-header-two {
+        text-align: center;
+    }
+
+    .card-body {
+        flex-direction: column;
+    }
+
+    .card-body img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .property-box{
+        border: 0.5px ridge gray;
+        width: 190px;
+        height: 150px;
+        padding: 3px;
+        margin-right: 10px;
+    }
+
+    .chat-message-btn, .send-message-btn {
+        width: 100%;
+        font-size: 13px;
+    }
+
+   
+}
+@media (max-width: 400px) {
+    .card {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .card-header-one, .card-header-two {
+        text-align: center;
+    }
+
+    .card-body {
+        flex-direction: column;
+    }
+
+    .card-body img {
+        width: 100%;
+        height: 130px;
+    }
+
+    .property-box{
+        border: 0.5px ridge gray;
+        width: 180px;
+        height: 150px;
+        padding: 1px;
+        margin-right: 10px;
+    }
+
+    .chat-message-btn, .send-message-btn {
+        width: 100%;
+        font-size: 13px;
+    }
+
+   
+}
+@media (max-width: 350px) {
+    .card {
+        width: 220px;
+        padding: 10px;
+        margin-left: -40px;
+    }
+
+    .card-header-one, .card-header-two {
+        text-align: center;
+    }
+
+    .card-body {
+        flex-direction: column;
+    }
+
+    .card-body img {
+        width: 100%;
+        height: 130px;
+    }
+
+    .property-box{
+        border: 0.5px ridge gray;
+        width: 190px;
+        height: 150px;
+        margin-right: 10px;
     }
 
     .chat-message-btn, .send-message-btn {

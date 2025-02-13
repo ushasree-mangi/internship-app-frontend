@@ -45,7 +45,7 @@
   }
   
   input:focus, select:focus, textarea:focus {
-    border-color: #007bff;
+    border-color: var(--gold);
     outline: none;
   }
   
@@ -93,7 +93,7 @@
     display: block;
     width: 100%;
     padding: 1rem;
-    background: #007bff;
+    background: var(--gold);
     color: white;
     border: none;
     border-radius: 4px;
@@ -103,7 +103,7 @@
   }
   
   .submit-btn:hover {
-    background: #0056b3;
+    background: var(--gold);
   }
   
   .full-width {

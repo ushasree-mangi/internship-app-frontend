@@ -46,13 +46,13 @@ const ChatRequestItem=(props)=>{
 
     
     return(
-        <div className="request-card" key={chatId}>
+        <div className="request-card container" key={chatId}>
                             <h3>Property Title: {propertyTitle}</h3>
                             <p>User name : {username}</p>
                             <p>Chat Request Status: {status}</p>
                             <button type="button" onClick={onClickAccept}>{status==="accepted"?"Accepted":"Accept"}</button>
                             <button type="button" onClick={onClickReject}>{status==="rejected"?"Rejected":"Reject"}</button>
-                            {status==="accepted"&&<button onClick={onClickSendMessage} className='send-message-btn'>send message</button>}
+                            {status==="accepted"&&<button onClick={onClickSendMessage} className='chatreq-send-message-btn'>send message</button>}
                         </div>
     )
 
